@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anggota Siber Bareskrim Mabes Polri</title>
+    <style>
+    :root {
+      color-scheme: dark;
+      --navy: #030914;
+      --navy-card: #0a1c31;
+      --cyan: #08e5ff;
+      --gold: #f0c869;
+      --white: #f3fbff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 50% 0, rgba(0, 115, 255, .18), transparent 36rem),
+        repeating-linear-gradient(0deg, transparent 0 42px, rgba(35, 122, 200, .035) 43px 44px),
+        repeating-linear-gradient(90deg, transparent 0 42px, rgba(35, 122, 200, .035) 43px 44px),
+        var(--navy);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: 84px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px max(5vw, 22px);
+      border-bottom: 1px solid rgba(8, 229, 255, .25);
+      background: rgba(3, 9, 20, .94);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .28);
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+
+    .brand-mark {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.4rem;
+      font-weight: 800;
+      box-shadow: 0 0 18px rgba(240, 200, 105, .15);
+    }
+
+    .brand-copy p {
+      margin: 0 0 3px;
+      color: #a4bbd1;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
+      letter-spacing: .07em;
+    }
+
+    .header-label {
+      padding: 7px 12px;
+      border: 1px solid rgba(8, 229, 255, .45);
+      border-radius: 3px;
+      color: var(--cyan);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+    main {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      width: min(1200px, calc(100% - 48px));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin: 0 auto;
+      padding: 34px 0 64px;
+    }
+
+    main::before {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: calc((100% - 100vw) / 2);
+      left: calc((100% - 100vw) / 2);
+      height: 250px;
+      background:
+        linear-gradient(180deg, rgba(0, 116, 255, .12), transparent),
+        repeating-linear-gradient(135deg, transparent 0 18px, rgba(8, 229, 255, .035) 19px 20px);
+      content: "";
+    }
+
+    .team-heading {
+      grid-column: 1 / -1;
+      padding: 12px 0 6px;
+      text-align: center;
+    }
+
+    .team-heading p {
+      margin: 0;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+    }
+
+    .team-heading h2 {
+      margin: 4px 0 0;
+      color: var(--cyan);
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      font-weight: 900;
+      letter-spacing: .2em;
+      line-height: 1;
+      text-shadow: 0 0 24px rgba(8, 229, 255, .35);
+    }
+
+    .team-heading span {
+      display: inline-block;
+      margin-top: 12px;
+      color: #9cb4cd;
+      font-size: .72rem;
+      letter-spacing: .2em;
+    }
+
+    main > section {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(8, 229, 255, .42);
+      border-radius: 10px;
+      background: linear-gradient(160deg, #0d2742, var(--navy-card) 76%);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .32), inset 0 0 20px rgba(0, 138, 255, .07);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    main > section:hover {
+      transform: translateY(-4px);
+      border-color: var(--cyan);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .4), 0 0 18px rgba(8, 229, 255, .12);
+    }
+
+    main > section img {
+      display: block;
+      width: 100%;
+      height: 210px;
+      padding: 8px;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(0, 143, 255, .34), transparent 65%),
+        repeating-linear-gradient(0deg, transparent 0 24px, rgba(8, 229, 255, .06) 25px 26px),
+        #071426;
+      color: #a8c7df;
+      font-size: .8rem;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    main > section .photo-placeholder {
+      display: grid;
+      width: 100%;
+      height: 210px;
+      place-items: center;
+      border-bottom: 1px solid rgba(8, 229, 255, .18);
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(0, 143, 255, .24), transparent 65%),
+        repeating-linear-gradient(0deg, transparent 0 24px, rgba(8, 229, 255, .05) 25px 26px),
+        #071426;
+      color: #7795ad;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+
+    main > section h2 {
+      min-height: 76px;
+      margin: 0;
+      padding: 17px 16px 21px;
+      border-top: 1px solid rgba(8, 229, 255, .34);
+      color: var(--cyan);
+      font-size: clamp(.85rem, 1.15vw, 1rem);
+      letter-spacing: .035em;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+      text-transform: uppercase;
+    }
+
+    main > section::after {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan);
+      content: "";
+    }
+
+    @media (max-width: 800px) {
+      main { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+      main > section img,
+      main > section .photo-placeholder { height: 190px; }
+    }
+
+    @media (max-width: 520px) {
+      header { min-height: 72px; }
+      .brand { gap: 10px; }
+      .brand-mark { width: 40px; height: 40px; }
+      .brand-copy p { font-size: .56rem; }
+      .header-label { padding: 6px 8px; font-size: .6rem; }
+      main { width: calc(100% - 28px); gap: 12px; padding-top: 25px; }
+      .team-heading h2 { letter-spacing: .1em; }
+      main > section img,
+      main > section .photo-placeholder { height: 145px; }
+      main > section img { padding: 5px; }
+      main > section h2 { min-height: 82px; padding: 13px 10px 20px; font-size: .76rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <div class="brand-copy">
+        <p>KEPOLISIAN NEGARA REPUBLIK INDONESIA</p>
+        <h1>BARESKRIM MABES POLRI</h1>
+      </div>
+    </div>
+    <span class="header-label">SIBER</span>
+  </header>
+
+  <main>
+    <div class="team-heading">
+      <p>BARESKRIM • MABES POLRI</p>
+      <h2>MEMBERS</h2>
+      <span>PROFIL ANGGOTA</span>
+    </div>
+    <section>
+      <img src="assets/image1.png" alt="Foto KOMPOL ERIKISON SIREGAR (KANIT)" loading="lazy">
+      <h2>KOMPOL ERIKISON SIREGAR (KANIT)</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>DIMAS ADI SAPUTRA, S.Kom AKP</h2>
+    </section>
+    <section>
+      <img src="assets/image2.png" alt="Foto FITROH QORI SAPUTRO, Amd. Pol., B.Eng AKP" loading="lazy">
+      <h2>FITROH QORI SAPUTRO, Amd. Pol., B.Eng AKP</h2>
+    </section>
+    <section>
+      <img src="assets/image3.png" alt="Foto FIKRI MUHAMAD SYA’BAN, S.Kom. AKP" loading="lazy">
+      <h2>FIKRI MUHAMAD SYA’BAN, S.Kom. AKP</h2>
+    </section>
+    <section>
+      <img src="assets/image4.png" alt="Foto HAFNI DWIKATYARANI, S.Kom AKP" loading="lazy">
+      <h2>HAFNI DWIKATYARANI, S.Kom AKP</h2>
+    </section>
+    <section>
+      <img src="assets/image5.png" alt="Foto AFRENI FERLIANDINI, S.T AKP" loading="lazy">
+      <h2>AFRENI FERLIANDINI, S.T AKP</h2>
+    </section>
+    <section>
+      <img src="assets/image6.png" alt="Foto MICHAEL TANDAYU AKP" loading="lazy">
+      <h2>MICHAEL TANDAYU AKP</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>WISNU AKP</h2>
+    </section>
+    <section>
+      <img src="assets/image7.png" alt="Foto NIBRAS DARYL HAMMAMI RAKHADHIA, S.Tr.K., S.I.K. IPTU" loading="lazy">
+      <h2>NIBRAS DARYL HAMMAMI RAKHADHIA, S.Tr.K., S.I.K. IPTU</h2>
+    </section>
+    <section>
+      <img src="assets/image8.png" alt="Foto RAY ALVIS, S.Tr.K. IPTU" loading="lazy">
+      <h2>RAY ALVIS, S.Tr.K. IPTU</h2>
+    </section>
+    <section>
+      <img src="assets/image9.png" alt="Foto MUHAMMAD PURWADA MUDAKKIR, S.Ds. IPTU" loading="lazy">
+      <h2>MUHAMMAD PURWADA MUDAKKIR, S.Ds. IPTU</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>JAKA JEVALDI, S.Sos. IPTU</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>FAKIH NUR RACHMAN, S.H. IPDA</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>ANASTASIA GENCA KUSUMA DEWI, S.Tr.K., M. H. IPTU</h2>
+    </section>
+    <section>
+      <img src="assets/image10.png" alt="Foto GAGAH PUTRA HARYO SATRIO, S.T. IPDA" loading="lazy">
+      <h2>GAGAH PUTRA HARYO SATRIO, S.T. IPDA</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>ANDI PRADANA PUTRA, S.E. IPDA</h2>
+    </section>
+    <section>
+      <img src="assets/image11.png" alt="Foto ANGOCO DUTO, S.H. IPDA" loading="lazy">
+      <h2>ANGOCO DUTO, S.H. IPDA</h2>
+    </section>
+    <section>
+      <img src="assets/image12.png" alt="Foto MADE SUWARDIKA, S.E. IPDA" loading="lazy">
+      <h2>MADE SUWARDIKA, S.E. IPDA</h2>
+    </section>
+    <section>
+      <img src="assets/image13.png" alt="Foto NAUFAL ZAKARIA IPDA" loading="lazy">
+      <h2>NAUFAL ZAKARIA IPDA</h2>
+    </section>
+    <section>
+      <img src="assets/image14.png" alt="Foto HERU WIBOWO IPDA" loading="lazy">
+      <h2>HERU WIBOWO IPDA</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>WINARNO AIPDA</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>PUTRA SUNDAWA, S.H. BRIPKA</h2>
+    </section>
+    <section>
+      <img src="assets/image15.png" alt="Foto DIMAS PRAMUDYA BRIGPOL" loading="lazy">
+      <h2>DIMAS PRAMUDYA BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image16.png" alt="Foto CHRISTIAN PRAMUDITA, S.Kom. BRIGPOL" loading="lazy">
+      <h2>CHRISTIAN PRAMUDITA, S.Kom. BRIGPOL</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>RIZKY YUNIAR BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image17.png" alt="Foto ANUAR, S.H. BRIGPOL" loading="lazy">
+      <h2>ANUAR, S.H. BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image18.png" alt="Foto ADHI KUSUMA HERLAMBANG, S.H. BRIGPOL" loading="lazy">
+      <h2>ADHI KUSUMA HERLAMBANG, S.H. BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image19.png" alt="Foto NUR FIRMANSYAH, S.DS. BRIGPOL" loading="lazy">
+      <h2>NUR FIRMANSYAH, S.DS. BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image20.png" alt="Foto WISNU WIDIATMOKO, S.Kom. BRIGPOL" loading="lazy">
+      <h2>WISNU WIDIATMOKO, S.Kom. BRIGPOL</h2>
+    </section>
+    <section>
+      <div class="photo-placeholder" role="img" aria-label="Foto belum tersedia">FOTO BELUM TERSEDIA</div>
+      <h2>AFIQI SURUR, S.Kom. BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image21.png" alt="Foto ADI SUTANTO, S.I.Kom. BRIGPOL" loading="lazy">
+      <h2>ADI SUTANTO, S.I.Kom. BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image22.png" alt="Foto IRFAN HADI SAGALA BRIGPOL" loading="lazy">
+      <h2>IRFAN HADI SAGALA BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image23.png" alt="Foto ANDI FACHRUDI, S.H. BRIGPOL" loading="lazy">
+      <h2>ANDI FACHRUDI, S.H. BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image24.png" alt="Foto REZA EGI NUGROHO BRIGPOL" loading="lazy">
+      <h2>REZA EGI NUGROHO BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image25.png" alt="Foto ARIES BRIGPOL" loading="lazy">
+      <h2>ARIES BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image26.png" alt="Foto ADHRIE NUR RAZZAQ BRIGPOL" loading="lazy">
+      <h2>ADHRIE NUR RAZZAQ BRIGPOL</h2>
+    </section>
+    <section>
+      <img src="assets/image27.png" alt="Foto MUKHAMMAD NUR ILHAM, S.H. BRIPTU" loading="lazy">
+      <h2>MUKHAMMAD NUR ILHAM, S.H. BRIPTU</h2>
+    </section>
+    <section>
+      <img src="assets/image28.png" alt="Foto AKBAR GUMELAR NUR I BRIPTU" loading="lazy">
+      <h2>AKBAR GUMELAR NUR I BRIPTU</h2>
+    </section>
+    <section>
+      <img src="assets/image29.png" alt="Foto FAYDHAN ZILVA BRIPTU" loading="lazy">
+      <h2>FAYDHAN ZILVA BRIPTU</h2>
+    </section>
+    <section>
+      <img src="assets/image30.png" alt="Foto NANDA TRI GUSDELMI BRIPTU" loading="lazy">
+      <h2>NANDA TRI GUSDELMI BRIPTU</h2>
+    </section>
+    <section>
+      <img src="assets/image31.png" alt="Foto ACHMAD LUTVIL AZIZ BRIPTU" loading="lazy">
+      <h2>ACHMAD LUTVIL AZIZ BRIPTU</h2>
+    </section>
+</main>
+</body>
+</html>
